@@ -67,8 +67,8 @@ function JobCategories() {
             <CreateJob
                 setOpen={setOpen}
                 open={open}
-                callback={useCallback((item) => {
-                    setListData([...listData, item])
+                callback={useCallback(() => {
+                    loadList()
                 }, [])}
             />
             <Button

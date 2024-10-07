@@ -42,7 +42,7 @@ const CreateJob = ({ open, setOpen, callback }) => {
                 type: 'success'
             })
             hideAlert()
-            callback(response?.data?.job)
+            callback()
 
         } catch (error) {
             setError(ValidatorError(error?.response?.data?.detail))

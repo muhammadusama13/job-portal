@@ -1,7 +1,7 @@
 import axios from "axios"
 import getHeader from "../utils/getHeader"
 
-const BASE_URL = 'http://localhost:5000/api/v1/'
+const BASE_URL = 'https://job-portal-backend-lac.vercel.app/api/v1/'
 
 
 const API = axios.create({
