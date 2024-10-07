@@ -42,7 +42,7 @@ function App() {
         e.preventDefault();
         try {
             const response = await https.post('auth/login', payload)
-            console.log(response?.data)
+
             if (response?.data?.token) {
                 Cookies.set("user_login", JSON.stringify(response?.data))
                 navigate('/job')
