@@ -38,11 +38,30 @@ function SignUpPage() {
                 message: response?.data?.message,
                 showMessage: true,
             })
+            hideAlert()
         } catch (error) {
             setError(ValidatorError(error?.response?.data?.error?.detail))
         }
 
     };
+
+    const hideAlert = () => {
+        setTimeout(() => {
+            setShowError({
+                message: '',
+                type: '',
+                showMessage: false,
+            })
+            setPayload({
+                name: '',
+                password: '',
+                email: '',
+                conform_password: ''
+            })
+
+
+        }, 3000)
+    }
 
     return (
         <>
