@@ -60,7 +60,6 @@ function JobCategories() {
     const logout = async () => {
         const resposne = await Cookies.remove('user_login')
         navigate(0)
-
     }
 
     return (
@@ -68,8 +67,8 @@ function JobCategories() {
             <CreateJob
                 setOpen={setOpen}
                 open={open}
-                callback={useCallback(() => {
-                    loadList()
+                callback={useCallback((item) => {
+                    setListData([...listData, item])
                 }, [])}
             />
             <Button
@@ -130,10 +129,10 @@ function JobCategories() {
                                         <Typography variant="h6" sx={{ fontSize: '14px' }}>Description</Typography>
                                         <Typography variant="h6" sx={{ fontSize: '13px', color: '#edede' }}>{item?.description}</Typography>
                                     </Box>
-                                    <Box>
+                                    {/* <Box>
                                         <Typography variant="h6" sx={{ fontSize: '14px' }}>Job creator</Typography>
                                         <Typography variant="h6" sx={{ fontSize: '13px', color: '#edede' }}>{item?.creator?.name}</Typography>
-                                    </Box>
+                                    </Box> */}
                                 </Box>
                             </AccordionDetails>
                         </Accordion>
